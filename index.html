@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Easy Dark Mode</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+       <style>
+           body{
+               margin: 0;
+               padding: 0;
+               font-family: sans-serif;
+           }
+           main{
+               margin: 5vh 15%;
+           }
+           h1{
+               font-size: 50px;
+               font-weight: 400;
+               
+           }
+           img{
+               width: 70%;
+               height: auto;
+               
+           }
+           h2{
+               font-size: 30px;
+           }
+           p{
+               font-size: 18px;
+           }
+           label{
+               position: absolute;
+               width: 45px;
+               height: 22px;
+               right: 20px;
+               top: 20px;
+               border: 2px solid;
+               border-radius: 20px;
+           }
+           label:before{
+               position: absolute;
+               content: "";
+               width: 20px;
+               height: 20px;
+               left: 1px;
+               top: 1px;
+               border-radius: 10px;
+               cursor: pointer;
+               background: #000;
+               transition: 0.45s;
+           }
+           label.active:before{
+               left: 24px;
+               background: #fff;
+           }
+           body.night{
+               background: #000;
+               color: #fff;
+           }
+       </style>
+    </head>
+    <body>
+        <header>
+            <label id="dark-change"></label>
+        </header>
+        <main>
+            <h1>Easy Dark Mode</h1>
+            <div id="respon">
+                <img src="https://islamindonesia.id/wp-content/uploads/2017/06/golden-city-background-of-eid-mubarak_1017-8713.jpg" alt="ramadhan">
+                <h2>Ramadhan Mubarak</h2>
+                <p>Bulan Ramadan adalah bulan suci yang penuh berkah bagi setiap umat Islam. Di bulan yang penuh berkah ini dibukalah ampunan yang luas bagi setiap hamba-Nya yang bertaubat dan ingin memperbaiki diri, setiap amal dan perbuatan baik akan mendapatkan pahala yang berlipat ganda.</p>
+            </div>
+        </main>
+        <script>
+            var content = document.getElementsByTagName('body')[0];
+            var darkMode = document.getElementById('dark-change');
+            darkMode.addEventListener('click',function(){
+                darkMode.classList.toggle('active');
+                content.classList.toggle('night');
+            })
+        </script>
+    </body>
+</html>
